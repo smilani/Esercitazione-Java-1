@@ -9,6 +9,8 @@
         </Console>
     </Appenders>
     <Loggers>
+      <Logger name="org.apache.xmlbeans" level="off"/>
+        <Logger name="org.apache.poi.openxml4j" level="off"/>
         <Root level="all">
             <AppenderRef ref="Simple"/>
             <AppenderRef ref="Console"/>
