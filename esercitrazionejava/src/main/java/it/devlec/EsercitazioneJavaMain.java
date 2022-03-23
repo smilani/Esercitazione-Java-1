@@ -1,6 +1,7 @@
 package it.devlec;
 
 import it.devlec.csv.EsempioCSV;
+import it.devlec.excel.EsempioExcel;
 import it.devlec.log.EsempioLog;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -19,5 +20,8 @@ public class EsercitazioneJavaMain {
         EsempioCSV esempioCSV = new EsempioCSV();
         esempioCSV.leggiCSV();
         esempioCSV.scriviCSV();
+        EsempioExcel esempioExcel = new EsempioExcel();
+        esempioExcel.leggiExcel();
+        esempioExcel.scriviIlMioFileExcel();
     }
 }
