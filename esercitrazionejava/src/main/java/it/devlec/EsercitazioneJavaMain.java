@@ -2,6 +2,7 @@ package it.devlec;
 
 import it.devlec.csv.EsempioCSV;
 import it.devlec.excel.EsempioExcel;
+import it.devlec.json.EsempioJSON;
 import it.devlec.log.EsempioLog;
 import it.devlec.pdf.EsempioPDF;
 import org.apache.logging.log4j.LogManager;
@@ -26,5 +27,8 @@ public class EsercitazioneJavaMain {
         esempioExcel.scriviIlMioFileExcel();
         EsempioPDF esempioPDF = new EsempioPDF();
         esempioPDF.creaMioPdf();
+        EsempioJSON esempioJSON = new EsempioJSON();
+        esempioJSON.esempioJSONOggetto();
+        esempioJSON.esempioJSONArray();
     }
 }
