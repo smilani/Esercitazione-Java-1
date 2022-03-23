@@ -57,7 +57,9 @@ public class EsempioCSV {
             } catch (URISyntaxException e) {
                 logger.error("Errore nel trovare nel creare il file");
             }
-            File mioCSV = new File(mieiAutoriCSVPath);
+            File parent = new File(mieiAutoriCSVPath).getParentFile();
+            String csvFile = parent.getAbsolutePath() + File.separator + "mieiAutori.csv";
+            File mioCSV = new File(csvFile);
             if(mioCSV.exists()){
                 logger.debug("Elimino il vecchio CSV");
                 mioCSV.delete();
