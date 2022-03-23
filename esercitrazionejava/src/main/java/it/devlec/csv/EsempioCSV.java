@@ -7,6 +7,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.*;
+import java.net.URISyntaxException;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,9 +25,16 @@ public class EsempioCSV {
     public EsempioCSV() {
     }
     public void leggiCSV() {
+        String mieiAutoriCSVPath = null;
+        try {
+            mieiAutoriCSVPath = Paths.get(ClassLoader.getSystemResource("esempio.csv")
+                    .toURI()).toString();
+        } catch (URISyntaxException e) {
+            logger.error("Errore nel trovare nel creare il file");
+        }
         Reader in = null;
         try {
-            in = new FileReader("esercitrazionejava/src/main/resources/esempio.csv");
+            in = new FileReader(mieiAutoriCSVPath);
             // Iterable<CSVRecord> records = CSVFormat.DEFAULT.parse(in);
             Iterable<CSVRecord> records = CSVFormat.DEFAULT.builder().setSkipHeaderRecord(true)
                     .setHeader(INTESTAZIONE).build().parse(in);
@@ -41,7 +50,13 @@ public class EsempioCSV {
     }
     public void scriviCSV(){
         try {
-            String mieiAutoriCSVPath = "esercitrazionejava/src/main/resources/mieiAutori.csv";
+            String mieiAutoriCSVPath = null;
+            try {
+                mieiAutoriCSVPath = Paths.get(ClassLoader.getSystemResource("esempio.csv")
+                        .toURI()).toString();
+            } catch (URISyntaxException e) {
+                logger.error("Errore nel trovare nel creare il file");
+            }
             File mioCSV = new File(mieiAutoriCSVPath);
             if(mioCSV.exists()){
                 logger.debug("Elimino il vecchio CSV");
