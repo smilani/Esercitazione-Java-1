@@ -26,6 +26,6 @@ public class EsempioJSON {
         jo.put("citta", "Roma");
 
         ja.put(jo);
-        logger.info("JSON "+ jo);
+        logger.info("JSON "+ ja);
     }
 }
