@@ -11,5 +11,8 @@ public class EsempioLog {
     }
     public void stampaAltriLog(){
         logger.info("Ciao da stampa altri log...");
+        logger.warn("Ei ei ei ei");
+        logger.error("Ciao ciao ciao");
+        logger.debug("Forza Bari");
     }
 }

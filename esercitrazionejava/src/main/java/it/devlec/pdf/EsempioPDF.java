@@ -37,21 +37,21 @@ public class EsempioPDF {
                     mioPDF);
             PdfWriter.getInstance(document,fileOutputStream);
             document.open();
-            Font font = FontFactory.getFont(FontFactory.COURIER, 16, BaseColor.BLACK);
-            Chunk chunk = new Chunk("Ciao Mondo", font);
+            Font font = FontFactory.getFont(FontFactory.COURIER, 20, BaseColor.BLACK);
+            Chunk chunk = new Chunk("CALCIATORI", font);
 
             document.add(chunk);
 
             PdfPTable table = new PdfPTable(3);
             addTableHeader(table);
             addRows(table);
-            addCustomRows(table);
+            //addCustomRows(table);
 
             document.add(table);
 
-            Path path = Paths.get(ClassLoader.getSystemResource("exprivia.jpg").toURI());
+            Path path = Paths.get(ClassLoader.getSystemResource("ibra.jpg").toURI());
             Image img = Image.getInstance(path.toAbsolutePath().toString());
-            img.scalePercent(8);
+            img.scalePercent(50);
 
             document.add(img);
             document.close();
@@ -62,7 +62,7 @@ public class EsempioPDF {
 
     }
     private void addTableHeader(PdfPTable table) {
-        Stream.of("colonna  1", "colonna  2", "colonna  3")
+        Stream.of("CALCIATORE", "RUOLO ", "ETA'")
                 .forEach(columnTitle -> {
                     PdfPCell header = new PdfPCell();
                     header.setBackgroundColor(BaseColor.LIGHT_GRAY);
@@ -73,12 +73,30 @@ public class EsempioPDF {
     }
 
     private void addRows(PdfPTable table) {
-        table.addCell("riga 1, colonna 1");
-        table.addCell("riga 1, colonna 2");
-        table.addCell("riga 1, colonna 3");
+        table.addCell("CALCIATORE");
+        table.addCell("RUOLO");
+        table.addCell("ETA'");
+
+        table.addCell("Zlatan Ibrahimovic");
+        table.addCell("Attacante");
+        table.addCell("41");
+
+        table.addCell("Antonio Cassano");
+        table.addCell("Attacante");
+        table.addCell("40");
+
+        table.addCell("Antonio di Natale");
+        table.addCell("Attacante");
+        table.addCell("45");
+
+        table.addCell("Alessandro Nesta");
+        table.addCell("Attacante");
+        table.addCell("47");
+
+
     }
-    private void addCustomRows(PdfPTable table)
-            throws URISyntaxException, BadElementException, IOException {
+   private void addCustomRows(PdfPTable table)
+           throws URISyntaxException, BadElementException, IOException {
 
         PdfPCell topAlignCell = new PdfPCell(new Phrase("riga 2, colonna 1"));
         topAlignCell.setHorizontalAlignment(Element.ALIGN_TOP);
@@ -91,5 +109,5 @@ public class EsempioPDF {
         PdfPCell verticalAlignCell = new PdfPCell(new Phrase("riga 2, colonna 3"));
         verticalAlignCell.setVerticalAlignment(Element.ALIGN_BOTTOM);
         table.addCell(verticalAlignCell);
-    }
+   }
 }

@@ -22,13 +22,12 @@ public class EsercitazioneJavaMain {
         EsempioCSV esempioCSV = new EsempioCSV();
         esempioCSV.leggiCSV();
         esempioCSV.scriviCSV();
-        EsempioExcel esempioExcel = new EsempioExcel();
-        esempioExcel.leggiExcel();
-        esempioExcel.scriviIlMioFileExcel();
+       EsempioExcel esempioExcel = new EsempioExcel();
+       esempioExcel.leggiExcel();
+       esempioExcel.scriviIlMioFileExcel();
         EsempioPDF esempioPDF = new EsempioPDF();
         esempioPDF.creaMioPdf();
         EsempioJSON esempioJSON = new EsempioJSON();
-        esempioJSON.esempioJSONOggetto();
         esempioJSON.esempioJSONArray();
     }
 }

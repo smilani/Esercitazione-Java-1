@@ -77,15 +77,36 @@ public class EsempioExcel {
         CellStyle style = workbook.createCellStyle();
         style.setWrapText(true);
 
-        Row row = sheet.createRow(2);
+        Row row = sheet.createRow(1);
         Cell cell = row.createCell(0);
-        cell.setCellValue("Mario Rossi");
+        cell.setCellValue("Saverio Milani");
+        cell.setCellStyle(style);
+
+
+        cell = row.createCell(1);
+        cell.setCellValue(22);
+        cell.setCellStyle(style);
+        File currDir = new File(".");
+
+        row = sheet.createRow(2);
+        cell = row.createCell(0);
+        cell.setCellValue("Gianvito Caldarola");
         cell.setCellStyle(style);
 
         cell = row.createCell(1);
-        cell.setCellValue(20);
+        cell.setCellValue(24);
         cell.setCellStyle(style);
-        File currDir = new File(".");
+       // File currDir = new File(".");
+
+        row = sheet.createRow(3);
+        cell = row.createCell(0);
+        cell.setCellValue("Mariangela Bruno");
+        cell.setCellStyle(style);
+
+        cell = row.createCell(1);
+        cell.setCellValue(21);
+        cell.setCellStyle(style);
+        // File currDir = new File(".");
 
 
         FileOutputStream outputStream = null;

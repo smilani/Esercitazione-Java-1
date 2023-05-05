@@ -14,6 +14,19 @@ public class EsempioJSON {
         jo.put("eta", "22");
         jo.put("citta", "Lecce");
         logger.info("JSON "+ jo);
+
+        JSONObject je = new JSONObject();
+        je.put("nome", "Saverio");
+        je.put("eta", "22");
+        je.put("citta", "Bari");
+
+
+        JSONObject ji = new JSONObject();
+        ji.put("nome", "Luca");
+        ji.put("eta", "34");
+        ji.put("citta", "Bitonto");
+        logger.info("JSON "+ jo + "\n" + je + "\n" + ji);
+
     }
     public void esempioJSONArray(){
         JSONArray ja = new JSONArray();
@@ -25,7 +38,27 @@ public class EsempioJSON {
         jo.put("eta", "67");
         jo.put("citta", "Roma");
 
+
+        JSONObject je = new JSONObject();
+        je.put("nome", "Saverio");
+        je.put("eta", "22");
+        je.put("citta", "Bari");
+
+
+        JSONObject ji = new JSONObject();
+        ji.put("nome", "Luca");
+        ji.put("eta", "34");
+        ji.put("citta", "Bitonto");
+        logger.info("JSON "+ jo + "\n" + je + "\n" + ji);
+
         ja.put(jo);
+        //logger.info("JSON "+ ja);
+
+        ja.put(je);
+        //logger.info("JSON "+ je);
+
+        ja.put(ji);
         logger.info("JSON "+ ja);
+
     }
 }
